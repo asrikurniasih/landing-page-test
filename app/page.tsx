@@ -7,7 +7,16 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [selectedUnit, setSelectedUnit] = useState<any>(null);
+  const [selectedUnit, setSelectedUnit] = useState<{
+    id: string;
+    name: string;
+    size: string;
+    bedrooms: number;
+    bathrooms: number;
+    features: string[];
+    images: string[];
+    denah: string;
+  } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const unitTypes = [
@@ -43,7 +52,16 @@ export default function Home() {
     }
   ];
 
-  const openModal = (unitType: any) => {
+  const openModal = (unitType: {
+    id: string;
+    name: string;
+    size: string;
+    bedrooms: number;
+    bathrooms: number;
+    features: string[];
+    images: string[];
+    denah: string;
+  }) => {
     console.log('Opening modal for unit:', unitType);
     setSelectedUnit(unitType);
     setIsModalOpen(true);
@@ -157,7 +175,7 @@ export default function Home() {
                   </h1>
                   <p className="text-md lg:text-ld text-gray-600 mb-8 leading-relaxed">
                     {/* {bannerSlides[currentSlide].description} */}
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                   </p>
                   
                   {/* CTA Buttons */}
@@ -182,7 +200,7 @@ export default function Home() {
                   </h1>
                   <p className="text-md lg:text-ld text-gray-600 mb-8 leading-relaxed">
                     {/* {bannerSlides[currentSlide].description} */}
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                   </p>
                   
                   {/* CTA Buttons */}
