@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-16">
@@ -6,9 +8,7 @@ export default function Footer() {
           {/* Logo and Social */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-sm"></div>
-              </div>
+              <Image src="/logo-pasar-jaya.png" alt="Rusunawa" width={32} height={32} />
               <span className="text-xl font-bold">Rusunawa</span>
             </div>
             <div className="mb-6">

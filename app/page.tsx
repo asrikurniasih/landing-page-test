@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -122,7 +120,7 @@ export default function Home() {
   };
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Slider Banner */}
       <section className="relative h-[600px] overflow-hidden bg-white">
@@ -282,19 +280,19 @@ export default function Home() {
       </section>
 
       {/* Unit Types Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Tipe Unit Rusunawa</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Tipe Unit Rusunawa</h2>
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               Pilih tipe unit yang sesuai dengan kebutuhan Anda di Rusunawa Pasar Jaya
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Unit Type 1 - Standar */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-64 relative">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
                 <Image
                   src="/foto-unit/ruang-tamu.jpeg"
                   alt="Unit Tipe Standar"
@@ -305,39 +303,39 @@ export default function Home() {
                   Tipe Standar
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Unit Tipe Standar (36m²)</h3>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Unit Tipe Standar (36m²)</h3>
                 <p className="text-gray-600 mb-4">Rusunawa Pasar Jaya, Jakarta</p>
-                <div className="space-y-2 mb-4">
+                <div className="space-y-1 mb-3">
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">1 Kamar Tidur</span>
+                    <span className="text-xs text-gray-600">1 Kamar Tidur</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">1 Kamar Mandi</span>
+                    <span className="text-xs text-gray-600">1 Kamar Mandi</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Dapur & Ruang Tamu</span>
+                    <span className="text-xs text-gray-600">Dapur & Ruang Tamu</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Balkon</span>
+                    <span className="text-xs text-gray-600">Balkon</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Luas 36m²</span>
+                    <span className="text-xs text-gray-600">Luas 36m²</span>
                   </div>
                 </div>
                 <button 
@@ -353,8 +351,8 @@ export default function Home() {
             </div>
             
             {/* Unit Type 2 - Hook 1 */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-64 relative">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
                 <Image
                   src="/foto-unit/kamar.jpeg"
                   alt="Unit Tipe Hook 1"
@@ -365,39 +363,39 @@ export default function Home() {
                   Tipe Hook 1
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Unit Tipe Hook 1 (38m²)</h3>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Unit Tipe Hook 1 (38m²)</h3>
                 <p className="text-gray-600 mb-4">Rusunawa Pasar Jaya, Jakarta</p>
-                <div className="space-y-2 mb-4">
+                <div className="space-y-1 mb-3">
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">2 Kamar Tidur</span>
+                    <span className="text-xs text-gray-600">2 Kamar Tidur</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">1 Kamar Mandi</span>
+                    <span className="text-xs text-gray-600">1 Kamar Mandi</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Dapur, Ruang Tamu & Gudang</span>
+                    <span className="text-xs text-gray-600">Dapur, Ruang Tamu & Gudang</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Balkon</span>
+                    <span className="text-xs text-gray-600">Balkon</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Luas 38m²</span>
+                    <span className="text-xs text-gray-600">Luas 38m²</span>
                   </div>
                 </div>
                 <button 
@@ -413,8 +411,8 @@ export default function Home() {
             </div>
             
             {/* Unit Type 3 - Hook 2 */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-64 relative">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 relative">
                 <Image
                   src="/foto-unit/kamar-2.jpeg"
                   alt="Unit Tipe Hook 2"
@@ -425,39 +423,39 @@ export default function Home() {
                   Tipe Hook 2
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Unit Tipe Hook 2 (38m²)</h3>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Unit Tipe Hook 2 (38m²)</h3>
                 <p className="text-gray-600 mb-4">Rusunawa Pasar Jaya, Jakarta</p>
-                <div className="space-y-2 mb-4">
+                <div className="space-y-1 mb-3">
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">2 Kamar Tidur</span>
+                    <span className="text-xs text-gray-600">2 Kamar Tidur</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">1 Kamar Mandi</span>
+                    <span className="text-xs text-gray-600">1 Kamar Mandi</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Dapur, Ruang Tamu & Gudang</span>
+                    <span className="text-xs text-gray-600">Dapur, Ruang Tamu & Gudang</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Balkon</span>
+                    <span className="text-xs text-gray-600">Balkon</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-gray-600">Luas 38m²</span>
+                    <span className="text-xs text-gray-600">Luas 38m²</span>
                   </div>
                 </div>
                 <button 
@@ -475,257 +473,210 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Let's See What You Are Looking For Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Complete Service Section */}
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">
-              MARI LIHAT APA YANG ANDA CARI
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Buy a Home */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Beli Rumah</h3>
-                <p className="text-gray-600 text-sm mb-4">Temukan rumah impian Anda dengan berbagai pilihan terbaik</p>
-                <a href="#" className="text-orange-500 font-medium flex items-center">
-                  Temukan Rumah Anda
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-              
-              {/* Rent a Home */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1721 9z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Sewa Rumah</h3>
-                <p className="text-gray-600 text-sm mb-4">Temukan properti sewa dengan harga terjangkau</p>
-                <a href="#" className="text-orange-500 font-medium flex items-center">
-                  Temukan Rumah Anda
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-              
-              {/* Sell a Home */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-green-500 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Jual Rumah</h3>
-                <p className="text-gray-600 text-sm mb-4">Jual properti Anda dengan harga terbaik</p>
-                <a href="#" className="text-orange-500 font-medium flex items-center">
-                  Temukan Rumah Anda
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
+            <div className="text-3xl font-bold text-gray-900 mb-2">
+             Mari Lihat Apa yang Anda Cari
             </div>
-            
-            {/* Right Illustration */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-full h-64 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-purple-500 rounded-lg mx-auto mb-4"></div>
-                  <p className="text-gray-600">Platform Terpercaya</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Neighborhood Properties Section */}
-      <section className="py-20 bg-white relative">
-        <div className="absolute inset-0 bg-gray-100 opacity-30"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Properti Sekitar</h2>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Property 1 */}
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <div className="h-48 bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-500 rounded-lg mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-sm">Gedung Modern</p>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full">
-                <span className="text-sm font-medium text-gray-800">216 Jakarta Pusat</span>
-              </div>
-            </div>
-            
-            {/* Property 2 */}
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <div className="h-48 bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-green-500 rounded-lg mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-sm">Apartemen</p>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full">
-                <span className="text-sm font-medium text-gray-800">141 Surabaya</span>
-              </div>
-            </div>
-            
-            {/* Property 3 */}
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <div className="h-48 bg-gradient-to-br from-orange-200 to-orange-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-orange-500 rounded-lg mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-sm">Rusunawa</p>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full">
-                <span className="text-sm font-medium text-gray-800">212 Bandung</span>
-              </div>
-            </div>
-            
-            {/* Property 4 */}
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <div className="h-48 bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-500 rounded-lg mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-sm">Kawasan</p>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full">
-                <span className="text-sm font-medium text-gray-800">183 Medan</span>
-              </div>
-            </div>
-            
-            {/* Property 5 */}
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <div className="h-48 bg-gradient-to-br from-teal-200 to-teal-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-teal-500 rounded-lg mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-sm">Residensial</p>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full">
-                <span className="text-sm font-medium text-gray-800">112 Yogyakarta</span>
-              </div>
-            </div>
-            
-            {/* Property 6 */}
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <div className="h-48 bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-pink-500 rounded-lg mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-sm">Kompleks</p>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full">
-                <span className="text-sm font-medium text-gray-800">95 Semarang</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Renting Made Easy Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Sewa Jadi Mudah untuk Penghuni dan Pengelola Properti
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - Advertise Your Rental */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Iklankan Sewa Anda</h3>
-              <p className="text-gray-600 mb-6">
-                Terhubung dengan penyewa menggunakan platform pemasaran kami yang canggih. 
-                Dapatkan visibilitas maksimal untuk properti Anda.
-              </p>
-              <a href="#" className="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
-                Daftarkan Properti Anda
-              </a>
-              <div className="mt-8">
-                <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-blue-500 rounded-lg mx-auto mb-4"></div>
-                    <p className="text-gray-600">Gedung Apartemen</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Right Column - Lease 100% Online */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Sewa 100% Online</h3>
-              <p className="text-gray-600 mb-6">
-                Terima aplikasi, proses pembayaran, dan tanda tangani sewa digital. 
-                Semua proses dapat dilakukan secara online dengan mudah dan aman.
-              </p>
-              <a href="#" className="inline-block bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-600 transition-colors">
-                Kelola Properti Anda
-              </a>
-              <div className="mt-8">
-                <div className="w-full h-48 bg-gradient-to-br from-teal-100 to-teal-200 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-teal-500 rounded-lg mx-auto mb-4"></div>
-                    <p className="text-gray-600">Rusunawa Modern</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Statistics Section */}
-      <section className="py-20 bg-orange-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Sewa memang bagus, tapi mungkin Anda berpikir untuk membeli rumah. Kami ingin Anda menemukan tempat yang tepat. 
-              Itulah mengapa platform kami dirancang untuk membantu Anda menemukan rumah impian, bahkan jika Anda pembeli pertama kali.
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
+              Apakah Anda sedang mencari hunian yang cocok untuk Anda dan keluarga? Rusunawa Pasar Jaya punya berbagai opsi yang bisa disesuaikan dengan kebutuhan dan anggaran Anda.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-500 mb-2">260+</div>
-              <div className="text-gray-600">Total Konstruksi</div>
+          {/* Service Options - 3 Cards Layout */}
+          <div className="mb-12">
+
+            {/* Sewa Rumah */}
+            <div className="bg-white border border-gray-200 overflow-hidden rounded-lg">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                {/* Image Section */}
+                <div className="relative h-64 lg:h-auto">
+                  <Image
+                    src="/foto-bangunan/gedung.jpeg"
+                    alt="Gedung Rusunawa"
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                
+                {/* Text Section */}
+                <div className="p-8 flex flex-col justify-center">
+                  <div className="w-16 h-16 bg-green-100 flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1721 9z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Sewa Rumah</h3>
+                  <p className="text-gray-600 mb-6 text-base">
+                    Unit sewa dengan biaya terjangkau, fleksibilitas kontrak, fasilitas lengkap. Ideal jika Anda belum siap membeli atau ingin mencoba tinggal di area tertentu dulu.
+                  </p>
+                  <button className="text-green-600 font-semibold hover:text-green-700 transition-colors text-left">
+                    Temukan Rumah Anda →
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-500 mb-2">110+</div>
-              <div className="text-gray-600">Review Agen</div>
+          </div>
+
+          {/* How to Get Started Section */}
+          {/* <div className="bg-gray-50 p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Bagaimana cara memulai?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-10 h-10 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                  <span className="text-sm font-bold text-white">1</span>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-1">Pilih Kategori</h4>
+                  <p className="text-xs text-gray-600">Pilih kategori yang paling sesuai dengan kebutuhan Anda di atas (Beli / Sewa / Jual).</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="w-10 h-10 bg-blue-600 flex items-center justify-center flex-shrink-0">
+                  <span className="text-sm font-bold text-white">2</span>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-1">Klik Tombol</h4>
+                  <p className="text-xs text-gray-600">Klik tombol "Temukan Rumah Anda" pada kategori yang Anda pilih.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="w-10 h-10 bg-green-600 flex items-center justify-center flex-shrink-0">
+                  <span className="text-sm font-bold text-white">3</span>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-1">Dapatkan Bantuan</h4>
+                  <p className="text-xs text-gray-600">Tim kami akan membantu Anda dengan informasi detail, foto unit, dan proses berikutnya.</p>
+                </div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-500 mb-2">190+</div>
-              <div className="text-gray-600">Apartemen Terjual</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-500 mb-2">560+</div>
-              <div className="text-gray-600">Total Penjualan</div>
+          </div> */}
+
+          {/* Why Choose Us Section */}
+          <div className="bg-gray-50 p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Kenapa Memilih Kami?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-blue-600 flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Platform Terpercaya</h4>
+                <p className="text-sm text-gray-600">Kami sudah membantu banyak penghuni menemukan hunian yang tepat dan agen properti menjual propertinya.</p>
+              </div>
+              <div className="text-center">
+                <div className="w-20 h-20 bg-purple-600 flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Semua dalam Genggaman</h4>
+                <p className="text-sm text-gray-600">Dari pencarian awal, pengajuan aplikasi, hingga kontrak, semuanya bisa dilakukan online.</p>
+              </div>
+              <div className="text-center">
+                <div className="w-20 h-20 bg-green-600 flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Dukungan Penuh</h4>
+                <p className="text-sm text-gray-600">Kami siap membantu tiap langkahnya: dari konsultasi, melihat unit, hingga proses legal.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* Rental Made Easy Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <div className="text-3xl font-bold text-gray-900 mb-2">
+              Sewa Jadi Mudah untuk Penghuni dan Pengelola Properti
+            </div>
+            <p className="text-base text-gray-600 max-w-4xl mx-auto">
+              Nikmati proses sewa yang praktis, transparan, dan aman. Baik Anda seorang penghuni yang mencari hunian nyaman, atau pengelola properti yang ingin mengelola unit lebih efisien — semuanya bisa dilakukan dalam satu platform.
+            </p>
+          </div>
+          
+          {/* 2x2 Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            {/* Top Left - Text - Untuk Penghuni */}
+            <div className="flex flex-col justify-center p-8 px-0">
+              <div className="flex items-center mb-4">
+                <h3 className="text-[18px] font-bold text-gray-900">
+                  Untuk Penghuni
+                </h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-[15px] font-semibold text-gray-900 mb-1">Cari & Temukan Cepat</h4>
+                  <p className="text-[14px] text-gray-600">Akses ratusan unit sesuai kebutuhan dan anggaran.</p>
+                </div>
+                <div>
+                  <h4 className="text-[15px] font-semibold text-gray-900 mb-1">Proses Online</h4>
+                  <p className="text-[14px] text-gray-600">Dari pengajuan, pembayaran, hingga kontrak, semua tanpa ribet.</p>
+                </div>
+                <div>
+                  <h4 className="text-[15px] font-semibold text-gray-900 mb-1">Aman & Terpercaya</h4>
+                  <p className="text-[14px] text-gray-600">Data dan transaksi Anda dijamin aman.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Top Right - Image */}
+            <div className="relative border border-gray-200">
+              <Image
+                src="/foto-bangunan/gedung-2.jpeg"
+                alt="Gedung Rusunawa"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover"
+              />
+            </div>
+
+            {/* Bottom Left - Composite Image */}
+            <div className="relative border border-gray-200">
+              <Image
+                src="/foto-bangunan/gedung-3.jpeg"
+                alt="Gedung Rusunawa"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover"
+              />
+            </div>
+
+            {/* Bottom Right - Text - Untuk Pengelola Properti */}
+            <div className="flex flex-col justify-center p-8">
+              <div className="flex items-center mb-4">
+                <h3 className="text-[18px] font-bold text-gray-900">
+                  Untuk Pengelola Properti
+                </h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-[15px] font-semibold text-gray-900 mb-1">Manajemen Mudah</h4>
+                  <p className="text-[14px] text-gray-600">Pantau unit, sewa, dan penghuni dalam satu dashboard.</p>
+                </div>
+                <div>
+                  <h4 className="text-[15px] font-semibold text-gray-900 mb-1">Pembayaran Tepat Waktu</h4>
+                  <p className="text-[14px] text-gray-600">Sistem otomatis memudahkan proses penagihan.</p>
+                </div>
+                <div>
+                  <h4 className="text-[15px] font-semibold text-gray-900 mb-1">Eksposur Luas</h4>
+                  <p className="text-[14px] text-gray-600">Unit Anda mudah ditemukan calon penyewa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <Footer /> */}
 
       {/* Unit Detail Modal */}
       {isModalOpen && selectedUnit && (

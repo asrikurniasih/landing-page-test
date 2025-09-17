@@ -1,5 +1,7 @@
 'use client';
 
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
@@ -11,19 +13,20 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{backgroundColor: '#09893c'}}>
+            {/* <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{backgroundColor: '#09893c'}}>
               <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>
+            </div> */}
+            <Image src="/logo-pasar-jaya.png" alt="Rusunawa" width={32} height={32} />
             <span className="text-xl font-bold text-gray-800">Rusunawa</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-600 hover:text-gray-900 transition-colors">Beranda</a>
-            <a href="#units" className="text-gray-600 hover:text-gray-900 transition-colors">Unit</a>
-            <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">Tentang</a>
-            <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">Kontak</a>
-            <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
+            <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">Beranda</Link>
+            <Link href="/unit" className="text-gray-600 hover:text-gray-900 transition-colors">Unit</Link>
+            <Link href="/tentang" className="text-gray-600 hover:text-gray-900 transition-colors">Tentang</Link>
+            <Link href="/kontak" className="text-gray-600 hover:text-gray-900 transition-colors">Kontak</Link>
+            <Link href="/faq" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ</Link>
           </nav>
 
           {/* CTA Button */}
@@ -59,11 +62,11 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <a href="#home" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Beranda</a>
-              <a href="#units" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Unit</a>
-              <a href="#about" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Tentang</a>
-              <a href="#contact" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Kontak</a>
-              <a href="#contact" className="block px-3 py-2 text-gray-600 hover:text-gray-900">FAQ</a>
+              <Link href="/" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Beranda</Link>
+              <Link href="/unit" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Unit</Link>
+              <Link href="/tentang" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Tentang</Link>
+              <Link href="/kontak" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Kontak</Link>
+              <Link href="/faq" className="block px-3 py-2 text-gray-600 hover:text-gray-900">FAQ</Link>
               <div className="px-3 py-2">
                 <button 
                   className="w-full text-white px-4 py-2 rounded-full font-semibold transition-all"
