@@ -31,14 +31,16 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button 
-              className="text-white px-6 py-2 rounded-full font-semibold transition-all shadow-0 hover:shadow-lg"
-              style={{backgroundColor: '#f8971d'}}
-              onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#e8850a'}
-              onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f8971d'}
-            >
-              Daftar Sekarang
-            </button>
+            <Link href="/pengajuan">
+              <button 
+                className="text-white px-6 py-2 rounded-full font-semibold transition-all shadow-0 hover:shadow-lg"
+                style={{backgroundColor: '#f8971d'}}
+                onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#e8850a'}
+                onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f8971d'}
+              >
+                Daftar Sekarang
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -68,12 +70,14 @@ export default function Header() {
               <Link href="/kontak" className="block px-3 py-2 text-gray-600 hover:text-gray-900">Kontak</Link>
               <Link href="/faq" className="block px-3 py-2 text-gray-600 hover:text-gray-900">FAQ</Link>
               <div className="px-3 py-2">
-                <button 
-                  className="w-full text-white px-4 py-2 rounded-full font-semibold transition-all"
-                  style={{backgroundColor: '#f8971d'}}
-                >
-                  Daftar Sekarang
-                </button>
+                <Link href="/pengajuan">
+                  <button 
+                    className="w-full text-white px-4 py-2 rounded-full font-semibold transition-all"
+                    style={{backgroundColor: '#f8971d'}}
+                  >
+                    Daftar Sekarang
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
