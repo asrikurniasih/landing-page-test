@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { callApi } from '@/lib/apiRef';
 
 // Helper untuk fallback status
-function getResponseStatus(result: any, fallbackStatus = 200) {
+function getResponseStatus(result: { status?: number } | null, fallbackStatus = 200) {
   return result?.status && typeof result.status === 'number' ? result.status : fallbackStatus;
 }
 
