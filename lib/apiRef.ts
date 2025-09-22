@@ -1,8 +1,13 @@
 // lib/api.ts
 import { cookies } from 'next/headers';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL!;
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || '';
 const AUTH = process.env.NEXT_PUBLIC_API_AUTH || '';
+
+// Validate API_BASE_URL
+if (!API_BASE) {
+  console.warn('NEXT_PUBLIC_API_BASE_URL is not defined. API calls will fail.');
+}
 
 async function callApiWithRetry(
   endpoint: string,
@@ -25,6 +30,11 @@ async function callApiWithRetry(
   const timeoutId = setTimeout(() => controller.abort(), 10000); // Reduce to 5 second timeout
 
   try {
+    // Ensure API_BASE_URL is defined
+    if (!API_BASE) {
+      throw new Error('API_BASE_URL is not configured');
+    }
+    
     const response = await fetch(`${API_BASE}${endpoint}`, {
       ...options,
       headers,

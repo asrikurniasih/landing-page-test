@@ -12,7 +12,7 @@ export async function GET(request: Request) {
 
     const queryString = searchParams.toString();
 
-    const { result, response } = await callApi(`/tenant_category/data?${queryString}`);
+    const { result, response } = await callApi(`/sites/tenant_category/data?${queryString}`);
 
     return NextResponse.json(result, {
       status: getResponseStatus(result, response.status),
@@ -40,7 +40,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { result, response } = await callApi('/tenant_category/add', {
+    const { result, response } = await callApi('/sites/tenant_category/add', {
       method: 'POST',
       body: JSON.stringify(body),
     });
