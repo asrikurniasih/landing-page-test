@@ -476,35 +476,54 @@ export default function Pengajuan() {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* Hero Section */}
-      <section className="relative h-[300px] overflow-hidden">
+      {/* Hero Section with Enhanced Design */}
+      <section className="relative h-[400px] lg:h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/foto-bangunan/gedung-4.jpeg"
-            alt="Rusunawa Pasar Jaya"
+            alt="Rusun Pasar Jaya"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
         </div>
         
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-            <h1 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-              Form Pengajuan Sewa Rusunawa
-            </h1>
-            <p className="text-sm lg:text-base text-white/90 max-w-3xl mx-auto">
-              Isi form di bawah ini untuk mengajukan sewa unit Rusunawa Pasar Jaya. Tim kami akan menghubungi Anda untuk proses selanjutnya.
-            </p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.709M15 6.291A7.962 7.962 0 0012 5c-2.34 0-4.29 1.009-5.824 2.709" />
+                </svg>
+                <span className="text-white text-sm font-medium">Form Pengajuan</span>
+              </div>
+              
+              <div className="text-2xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Pengajuan Sewa 
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+                  Rusun
+                </span>
+              </div>
+              
+              <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Isi form di bawah ini untuk mengajukan sewa unit Rusun Pasar Jaya. 
+                <span className="block mt-2 text-white/80">
+                  Tim kami akan menghubungi Anda untuk proses selanjutnya.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Form Section */}
-      <section className="py-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-md p-8">
+      <section className="py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-lg shadow-0 p-8">
             {/* Program Selection */}
             <div className="mb-8">
               <div className="mb-2 text-sm font-medium text-gray-700">

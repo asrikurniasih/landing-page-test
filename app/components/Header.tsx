@@ -16,8 +16,8 @@ export default function Header() {
             {/* <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{backgroundColor: '#09893c'}}>
               <div className="w-4 h-4 bg-white rounded-sm"></div>
             </div> */}
-            <Image src="/logo-pasar-jaya.png" alt="Rusunawa" width={32} height={32} />
-            <span className="text-xl font-bold text-gray-800">Rusunawa</span>
+            <Image src="/logo-pasar-jaya.png" alt="Rusun" width={32} height={32} />
+            <span className="text-xl font-bold text-gray-800">Rusun</span>
           </div>
 
           {/* Desktop Navigation */}

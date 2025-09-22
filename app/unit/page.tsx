@@ -77,12 +77,12 @@ export default function UnitPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[300px] overflow-hidden bg-white">
+      {/* Hero Section with Enhanced Design */}
+      <section className="relative h-[400px] lg:h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/foto-bangunan/gedung-4.jpeg"
-            alt="Rusunawa Pasar Rumput"
+            alt="Rusun Pasar Jaya"
             fill
             className="object-cover"
             priority
@@ -91,15 +91,34 @@ export default function UnitPage() {
         </div>
         
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-            <h1 className="text-2xl lg:text-3xl font-bold text-white mb-6 leading-tight">
-              Tipe Unit Rusunawa
-            </h1>
-            <p className="text-sm lg:text-base text-white max-w-3xl mx-auto leading-relaxed">
-             Pilih tipe unit yang sesuai dengan kebutuhan Anda di Rusunawa Pasar Jaya
-            </p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="text-white text-sm font-medium">Tipe Unit</span>
+              </div>
+              
+              <div className="text-2xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Tipe Unit 
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+                  Rusun
+                </span>
+              </div>
+              
+              <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Pilih tipe unit yang sesuai dengan kebutuhan Anda di Rusun Pasar Jaya. 
+                <span className="block mt-2 text-white/80">
+                  Setiap unit dirancang untuk memberikan kenyamanan maksimal.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Unit Types Section */}
@@ -131,7 +150,7 @@ export default function UnitPage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Unit Tipe Standar</h3>
-                <p className="text-gray-600 mb-4">Rusunawa Pasar Jaya, Jakarta</p>
+                <p className="text-gray-600 mb-4">Rusun Pasar Jaya, Jakarta</p>
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center space-x-3">
                     <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
@@ -188,7 +207,7 @@ export default function UnitPage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Unit Tipe Hook 1</h3>
-                <p className="text-gray-600 mb-4">Rusunawa Pasar Jaya, Jakarta</p>
+                <p className="text-gray-600 mb-4">Rusun Pasar Jaya, Jakarta</p>
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center space-x-3">
                     <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
@@ -245,7 +264,7 @@ export default function UnitPage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Unit Tipe Hook 2</h3>
-                <p className="text-gray-600 mb-4">Rusunawa Pasar Jaya, Jakarta</p>
+                <p className="text-gray-600 mb-4">Rusun Pasar Jaya, Jakarta</p>
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center space-x-3">
                     <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#09893c'}}>
@@ -293,7 +312,7 @@ export default function UnitPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Fasilitas & Keunggulan</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Nikmati berbagai fasilitas dan keunggulan yang tersedia di Rusunawa Pasar Jaya
+              Nikmati berbagai fasilitas dan keunggulan yang tersedia di Rusun Pasar Jaya
             </p>
           </div>
           
@@ -408,7 +427,7 @@ export default function UnitPage() {
                 <div className="xl:col-span-1 space-y-6">
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{selectedUnit?.name} ({selectedUnit?.size})</h3>
-                    <p className="text-gray-600 mb-4">Rusunawa Pasar Jaya, Jakarta</p>
+                    <p className="text-gray-600 mb-4">Rusun Pasar Jaya, Jakarta</p>
                     
                     <div className="space-y-3">
                       {selectedUnit?.features.map((feature: string, index: number) => (

@@ -8,8 +8,8 @@ export default function Footer() {
           {/* Logo and Social */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <Image src="/logo-pasar-jaya.png" alt="Rusunawa" width={32} height={32} />
-              <span className="text-xl font-bold">Rusunawa</span>
+              <Image src="/logo-pasar-jaya.png" alt="Rusun" width={32} height={32} />
+              <span className="text-xl font-bold">Rusun</span>
             </div>
             <div className="mb-6">
               <p className="text-gray-300 mb-4">Ikuti kami</p>
@@ -42,10 +42,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Tautan Cepat</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Tentang Kami</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Unit Tersedia</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Cara Sewa</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+              <li><a href="/tentang" className="text-gray-300 hover:text-white transition-colors">Tentang Kami</a></li>
+              <li><a href="/unit" className="text-gray-300 hover:text-white transition-colors">Unit Tersedia</a></li>
+              <li><a href="/pengajuan" className="text-gray-300 hover:text-white transition-colors">Pengajuan</a></li>
+              <li><a href="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
             </ul>
           </div>
 
@@ -80,7 +80,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Rusunawa Pasar Jaya. Semua hak dilindungi.
+              © 2024 Rusun Pasar Jaya. Semua hak dilindungi.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Kebijakan Privasi</a>

@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rusunawa Pasar Jaya - Hunian Sewa Terjangkau di Jakarta",
-  description: "Rusunawa Pasar Rumput - Rumah susun sewa yang dikelola Perumda Pasar Jaya di Jakarta. Hunian berkualitas dengan harga terjangkau untuk masyarakat Jakarta.",
+  title: "Rusun Pasar Jaya - Hunian Sewa Terjangkau di Jakarta",
+  description: "Rusun Pasar Rumput - Rumah susun sewa yang dikelola Perumda Pasar Jaya di Jakarta. Hunian berkualitas dengan harga terjangkau untuk masyarakat Jakarta.",
   keywords: "rusunawa pasar jaya, rusunawa pasar rumput, rumah susun sewa jakarta, perumda pasar jaya, hunian terjangkau jakarta",
   openGraph: {
-    title: "Rusunawa Pasar Jaya - Hunian Sewa Terjangkau di Jakarta",
-    description: "Rusunawa Pasar Rumput - Rumah susun sewa yang dikelola Perumda Pasar Jaya di Jakarta. Hunian berkualitas dengan harga terjangkau untuk masyarakat Jakarta.",
+    title: "Rusun Pasar Jaya - Hunian Sewa Terjangkau di Jakarta",
+    description: "Rusun Pasar Rumput - Rumah susun sewa yang dikelola Perumda Pasar Jaya di Jakarta. Hunian berkualitas dengan harga terjangkau untuk masyarakat Jakarta.",
     type: "website",
     locale: "id_ID",
   },

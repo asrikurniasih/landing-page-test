@@ -41,12 +41,12 @@ export default function Tentang() {
   };
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[300px] overflow-hidden bg-white">
+      {/* Hero Section with Enhanced Design */}
+      <section className="relative h-[400px] lg:h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/foto-bangunan/gedung-4.jpeg"
-            alt="Rusunawa Pasar Rumput"
+            alt="Rusun Pasar Jaya"
             fill
             className="object-cover"
             priority
@@ -55,15 +55,34 @@ export default function Tentang() {
         </div>
         
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-            <h1 className="text-2xl lg:text-3xl font-bold text-white mb-6 leading-tight">
-              Tentang Rusunawa
-            </h1>
-            <p className="text-sm lg:text-base text-white max-w-3xl mx-auto leading-relaxed">
-              Solusi Hunian Terjangkau untuk Masyarakat Jakarta
-            </p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                <span className="text-white text-sm font-medium">Tentang Kami</span>
+              </div>
+              
+              <div className="text-2xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Tentang Rusun 
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+                  Pasar Jaya
+                </span>
+              </div>
+              
+              <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Solusi hunian terjangkau untuk masyarakat Jakarta. 
+                <span className="block mt-2 text-white/80">
+                  Temukan kenyamanan dan kemudahan dalam satu tempat.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Main Content Section */}
@@ -72,14 +91,14 @@ export default function Tentang() {
           <div className="prose prose-lg max-w-none">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
-                Mengenal Rusunawa Pasar Jaya
+                Mengenal Rusun Pasar Jaya
               </h2>
             </div>
             
             <div className="space-y-8">
               <div className="bg-gray-50 p-8 rounded-lg">
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  Rusunawa (Rumah Susun Sederhana Sewa) adalah hunian vertikal yang disediakan pemerintah sebagai solusi perumahan terjangkau bagi masyarakat. Dengan konsep sederhana namun tetap layak huni, Rusunawa hadir untuk menjawab kebutuhan tempat tinggal yang nyaman, aman, dan strategis bagi masyarakat berpenghasilan rendah (MBR).
+                  Rusun (Rumah Susun Sederhana Sewa) adalah hunian vertikal yang disediakan pemerintah sebagai solusi perumahan terjangkau bagi masyarakat. Dengan konsep sederhana namun tetap layak huni, Rusun hadir untuk menjawab kebutuhan tempat tinggal yang nyaman, aman, dan strategis bagi masyarakat berpenghasilan rendah (MBR).
                 </p>
               </div>
 
@@ -87,7 +106,7 @@ export default function Tentang() {
                 <div>
                   <Image
                     src="/foto-bangunan/gedung.jpeg"
-                    alt="Gedung Rusunawa"
+                    alt="Gedung Rusun"
                     width={600}
                     height={400}
                     className="w-full h-80 object-cover rounded-lg shadow-lg"
@@ -98,7 +117,7 @@ export default function Tentang() {
                     Sistem Sewa yang Fleksibel
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
-                    Melalui sistem sewa yang fleksibel dan biaya yang terjangkau, Rusunawa memberikan kesempatan bagi masyarakat untuk tinggal di lingkungan yang sehat dengan fasilitas memadai. Selain itu, Rusunawa juga dirancang untuk mendukung keteraturan tata kota, mengurangi kawasan kumuh, serta meningkatkan kualitas hidup masyarakat.
+                    Melalui sistem sewa yang fleksibel dan biaya yang terjangkau, Rusun memberikan kesempatan bagi masyarakat untuk tinggal di lingkungan yang sehat dengan fasilitas memadai. Selain itu, Rusun juga dirancang untuk mendukung keteraturan tata kota, mengurangi kawasan kumuh, serta meningkatkan kualitas hidup masyarakat.
                   </p>
                 </div>
               </div>
@@ -108,7 +127,7 @@ export default function Tentang() {
                   Platform Digital yang Mudah
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Aplikasi Rusunawa ini hadir untuk memudahkan masyarakat dalam mendapatkan informasi lengkap mengenai unit yang tersedia, melakukan pendaftaran secara online, hingga menghubungi pengelola secara langsung. Dengan adanya platform digital ini, proses pengajuan hunian menjadi lebih cepat, transparan, dan efisien.
+                  Aplikasi Rusun ini hadir untuk memudahkan masyarakat dalam mendapatkan informasi lengkap mengenai unit yang tersedia, melakukan pendaftaran secara online, hingga menghubungi pengelola secara langsung. Dengan adanya platform digital ini, proses pengajuan hunian menjadi lebih cepat, transparan, dan efisien.
                 </p>
               </div>
             </div>
@@ -121,10 +140,10 @@ export default function Tentang() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Keunggulan Rusunawa
+              Keunggulan Rusun
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Temukan keunggulan yang membuat Rusunawa menjadi pilihan terbaik untuk hunian terjangkau
+              Temukan keunggulan yang membuat Rusun menjadi pilihan terbaik untuk hunian terjangkau
             </p>
           </div>
           
@@ -173,10 +192,10 @@ export default function Tentang() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Galeri Gedung Rusunawa
+              Galeri Gedung Rusun
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Lihat kemegahan dan kualitas bangunan Rusunawa Pasar Jaya
+              Lihat kemegahan dan kualitas bangunan Rusun Pasar Jaya
             </p>
           </div>
           
@@ -189,7 +208,7 @@ export default function Tentang() {
               >
                 <Image
                   src={image}
-                  alt={`Gedung Rusunawa ${index + 1}`}
+                  alt={`Gedung Rusun ${index + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -220,7 +239,7 @@ export default function Tentang() {
             Siap Mencari Hunian Terjangkau?
           </h2>
           <p className="text-green-100 mb-8 text-lg">
-            Daftarkan diri Anda sekarang dan dapatkan kesempatan untuk tinggal di Rusunawa Pasar Jaya
+            Daftarkan diri Anda sekarang dan dapatkan kesempatan untuk tinggal di Rusun Pasar Jaya
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl" style={{backgroundColor: '#f8971d'}} onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#e8850a'} onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f8971d'}>
@@ -270,7 +289,7 @@ export default function Tentang() {
             <div className="relative h-[80vh] rounded-lg overflow-hidden">
               <Image
                 src={buildingImages[currentImageIndex]}
-                alt={`Gedung Rusunawa ${currentImageIndex + 1}`}
+                alt={`Gedung Rusun ${currentImageIndex + 1}`}
                 fill
                 sizes="100vw"
                 className="object-contain bg-black"

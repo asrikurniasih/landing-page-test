@@ -2,13 +2,75 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { TextField, Button } from '@mui/material';
 
 export default function KontakPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
+
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    phone: false,
+    message: false
+  });
+
+  // Validation functions
+  const validateField = (field: string, value: any) => {
+    if (value === '' || value === null || value === undefined) {
+      return true;
+    }
+    
+    switch (field) {
+      case 'name':
+        return value.trim().length < 3;
+      case 'email':
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return !emailRegex.test(value);
+      case 'phone':
+        // Validasi nomor telepon Indonesia: 08xx-xxxx-xxxx atau +628xx-xxxx-xxxx
+        const phoneRegex = /^(\+62|62|0)8[1-9][0-9]{6,9}$/;
+        return !phoneRegex.test(value.replace(/\s/g, ''));
+      case 'message':
+        return value.trim().length < 10;
+      default:
+        return false;
+    }
+  };
+
+  const getErrorMessage = (field: string, value?: any) => {
+    if (value === '' || value === null || value === undefined) {
+      switch (field) {
+        case 'name':
+          return 'Nama wajib diisi';
+        case 'email':
+          return 'Email wajib diisi';
+        case 'phone':
+          return 'Nomor telepon wajib diisi';
+        case 'message':
+          return 'Pesan wajib diisi';
+        default:
+          return `${field.charAt(0).toUpperCase() + field.slice(1)} wajib diisi`;
+      }
+    }
+    
+    switch (field) {
+      case 'name':
+        return 'Nama minimal 3 karakter';
+      case 'email':
+        return 'Format email tidak valid';
+      case 'phone':
+        return 'Format nomor telepon tidak valid. Gunakan format: 08xx-xxxx-xxxx atau +628xx-xxxx-xxxx';
+      case 'message':
+        return 'Pesan minimal 10 karakter';
+      default:
+        return `${field.charAt(0).toUpperCase() + field.slice(1)} tidak valid`;
+    }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -16,41 +78,85 @@ export default function KontakPage() {
       ...prev,
       [name]: value
     }));
+
+    // Real-time validation for specific fields
+    if (['name', 'email', 'phone', 'message'].includes(name)) {
+      const isValid = !validateField(name, value);
+      setErrors(prev => ({ ...prev, [name]: !isValid }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate all required fields
+    const validationErrors: any = {};
+    
+    Object.keys(formData).forEach(field => {
+      const value = formData[field as keyof typeof formData];
+      const isValid = validateField(field, value);
+      if (isValid) {
+        validationErrors[field] = true;
+      }
+    });
+    
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    
     // Handle form submission here
     console.log('Form submitted:', formData);
+    
     // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', message: '' });
+    setErrors({ name: false, email: false, phone: false, message: false });
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Background Image */}
-      <section className="relative h-[300px] overflow-hidden">
+      {/* Hero Section with Enhanced Design */}
+      <section className="relative h-[400px] lg:h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/foto-bangunan/gedung-4.jpeg"
-            alt="Rusunawa Pasar Jaya"
+            alt="Rusun Pasar Jaya"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
         </div>
         
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-            <h1 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-              Kontak Kami
-            </h1>
-            <p className="text-sm lg:text-base text-white/90 max-w-3xl mx-auto">
-              Punya pertanyaan atau ingin berdiskusi lebih lanjut? Kami siap membantu Anda.
-            </p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                <svg className="w-5 h-5 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="text-white text-sm font-medium">Hubungi Kami</span>
+              </div>
+              
+              <div className="text-2xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Kontak 
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+                  & Bantuan
+                </span>
+              </div>
+              
+              <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Punya pertanyaan atau ingin berdiskusi lebih lanjut? 
+                <span className="block mt-2 text-white/80">
+                  Tim customer service kami siap membantu Anda 24/7.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Contact Information Section */}
@@ -121,8 +227,8 @@ export default function KontakPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Formulir Kontak
@@ -132,70 +238,178 @@ export default function KontakPage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Nama Lengkap */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Nama Lengkap
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="Masukkan nama lengkap Anda"
-                />
-              </div>
+          <div className="bg-white rounded-lg shadow-0 p-8">
+            <form onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Nama Lengkap */}
+                <div className="md:col-span-2">
+                  <div className="mb-2 text-sm font-medium text-gray-700">
+                    Nama Lengkap <span className="text-red-500">*</span>
+                  </div>
+                  <TextField
+                    size="small"
+                    fullWidth
+                    placeholder="Masukkan nama lengkap Anda"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    name="name"
+                    required
+                    error={errors.name}
+                    helperText={errors.name ? getErrorMessage('name', formData.name) : ''}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        borderRadius: 1,
+                        fontSize: 14,
+                        minHeight: 40,
+                        backgroundColor: errors.name ? '#fef2f2' : (formData.name && !errors.name) ? '#f0fdf4' : '#f9fafb',
+                        '&.Mui-focused': {
+                          backgroundColor: '#fff',
+                        },
+                      },
+                      '& .MuiInputBase-input': {
+                        padding: '8px 12px',
+                        fontSize: 14,
+                      },
+                      '& .MuiFormHelperText-root': {
+                        fontSize: 12,
+                        marginTop: '4px',
+                      },
+                    }}
+                  />
+                </div>
 
-              {/* Email */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="Masukkan alamat email Anda"
-                />
-              </div>
+                {/* Email */}
+                <div>
+                  <div className="mb-2 text-sm font-medium text-gray-700">
+                    Email <span className="text-red-500">*</span>
+                  </div>
+                  <TextField
+                    size="small"
+                    fullWidth
+                    type="email"
+                    placeholder="contoh@email.com"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    name="email"
+                    required
+                    error={errors.email}
+                    helperText={errors.email ? getErrorMessage('email', formData.email) : ''}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        borderRadius: 1,
+                        fontSize: 14,
+                        minHeight: 40,
+                        backgroundColor: errors.email ? '#fef2f2' : (formData.email && !errors.email) ? '#f0fdf4' : '#f9fafb',
+                        '&.Mui-focused': {
+                          backgroundColor: '#fff',
+                        },
+                      },
+                      '& .MuiInputBase-input': {
+                        padding: '8px 12px',
+                        fontSize: 14,
+                      },
+                      '& .MuiFormHelperText-root': {
+                        fontSize: 12,
+                        marginTop: '4px',
+                      },
+                    }}
+                  />
+                </div>
 
-              {/* Pesan */}
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Pesan Anda
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
-                  placeholder="Tuliskan pesan atau pertanyaan Anda di sini..."
-                />
+                {/* Phone Number - Adding a phone field to match pengajuan form structure */}
+                <div>
+                  <div className="mb-2 text-sm font-medium text-gray-700">
+                    Nomor Telepon
+                  </div>
+                  <TextField
+                    size="small"
+                    fullWidth
+                    placeholder="Masukkan nomor telepon"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    name="phone"
+                    error={errors.phone}
+                    helperText={errors.phone ? getErrorMessage('phone', formData.phone) : 'Contoh: 08123456789 atau +628123456789'}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        borderRadius: 1,
+                        fontSize: 14,
+                        minHeight: 40,
+                        backgroundColor: errors.phone ? '#fef2f2' : (formData.phone && !errors.phone) ? '#f0fdf4' : '#f9fafb',
+                        '&.Mui-focused': {
+                          backgroundColor: '#fff',
+                        },
+                      },
+                      '& .MuiInputBase-input': {
+                        padding: '8px 12px',
+                        fontSize: 14,
+                      },
+                      '& .MuiFormHelperText-root': {
+                        fontSize: 12,
+                        marginTop: '4px',
+                      },
+                    }}
+                  />
+                </div>
+
+                {/* Pesan */}
+                <div className="md:col-span-2">
+                  <div className="mb-2 text-sm font-medium text-gray-700">
+                    Pesan Anda <span className="text-red-500">*</span>
+                  </div>
+                  <TextField
+                    size="small"
+                    fullWidth
+                    multiline
+                    rows={6}
+                    placeholder="Tuliskan pesan atau pertanyaan Anda di sini..."
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    name="message"
+                    required
+                    error={errors.message}
+                    helperText={errors.message ? getErrorMessage('message', formData.message) : ''}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        borderRadius: 1,
+                        fontSize: 14,
+                        backgroundColor: errors.message ? '#fef2f2' : (formData.message && !errors.message) ? '#f0fdf4' : '#f9fafb',
+                        '&.Mui-focused': {
+                          backgroundColor: '#fff',
+                        },
+                      },
+                      '& .MuiInputBase-input': {
+                        fontSize: 14,
+                      },
+                      '& .MuiFormHelperText-root': {
+                        fontSize: 12,
+                        marginTop: '4px',
+                      },
+                    }}
+                  />
+                </div>
               </div>
 
               {/* Submit Button */}
-              <div className="text-center">
-                <button
+              <div className="mt-8 flex justify-center">
+                <Button
+                  variant="contained"
+                  size="large"
                   type="submit"
-                  className="text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
-                  style={{backgroundColor: '#f8971d'}}
-                  onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#e8850a'}
-                  onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f8971d'}
+                  sx={{
+                    fontSize: 16,
+                    textTransform: 'none',
+                    borderRadius: 2,
+                    minHeight: 48,
+                    minWidth: 200,
+                    backgroundColor: '#f8971d',
+                    '&:hover': {
+                      backgroundColor: '#e8850a',
+                    },
+                  }}
                 >
                   Kirim Pesan
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -211,7 +425,7 @@ export default function KontakPage() {
               <div className="bg-white rounded-2xl p-2 shadow-2xl">
                 <Image
                   src="/foto-bangunan/gedung-dari-bawah.jpeg"
-                  alt="Rusunawa Pasar Jaya"
+                  alt="Rusun Pasar Jaya"
                   width={600}
                   height={400}
                   className="w-full h-96 object-cover rounded-xl"
