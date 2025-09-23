@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-16">
+    <footer className="bg-gray-800 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Social */}
@@ -83,17 +83,17 @@ export default function Footer() {
               © 2024 Rusun Pasar Jaya. Semua hak dilindungi.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Kebijakan Privasi</a>
+              {/* <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Kebijakan Privasi</a>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Syarat & Ketentuan</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Bantuan</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Bantuan</a> */}
             </div>
           </div>
-          <div className="mt-4 pt-4 border-t border-gray-700">
+          {/* <div className="mt-4 pt-4 border-t border-gray-700">
             <p className="text-gray-500 text-xs text-center">
               Semua merek dagang adalah milik dari pemiliknya masing-masing. 
               Penggunaan merek dagang tidak menyiratkan afiliasi atau dukungan dari pemilik merek dagang.
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
