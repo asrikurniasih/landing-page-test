@@ -24,3 +24,53 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* FAQ Content Styling */
+.faq-content {
+  line-height: 1.6;
+}
+
+.faq-content p {
+  margin-bottom: 0.75rem;
+}
+
+.faq-content p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-content span {
+  color: inherit;
+}
+
+.faq-content strong {
+  font-weight: 600;
+}
+
+.faq-content em {
+  font-style: italic;
+}
+
+.faq-content ul {
+  list-style-type: disc;
+  margin-left: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq-content ol {
+  list-style-type: decimal;
+  margin-left: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq-content li {
+  margin-bottom: 0.25rem;
+}
+
+.faq-content a {
+  color: #09893c;
+  text-decoration: underline;
+}
+
+.faq-content a:hover {
+  color: #077a35;
+}
