@@ -19,6 +19,7 @@ interface BannerSlide {
   isActive?: boolean;
 }
 
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedUnit, setSelectedUnit] = useState<{
@@ -179,6 +180,7 @@ export default function Home() {
     fetchBannerData();
   }, []);
 
+
   useEffect(() => {
     if (bannerSlides.length > 1) {
       const timer = setInterval(() => {
@@ -251,6 +253,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* <Header /> */}
+      
 
       {/* Hero Slider Banner */}
       <section className="relative h-[600px] overflow-hidden bg-white">

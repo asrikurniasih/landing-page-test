@@ -2,22 +2,105 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// Config type definition
+interface ConfigData {
+  id: string;
+  company_name: string;
+  logo: string;
+  fav_icon: string;
+  color_array: Array<{
+    hex: string;
+    active: boolean;
+  }>;
+  footer_array: {
+    email: string;
+    phone: string;
+    sosmed: Array<{
+      link: string;
+      type: string;
+    }>;
+    address: string;
+  };
+}
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [configData, setConfigData] = useState<ConfigData | null>(null);
+  const [isLoadingConfig, setIsLoadingConfig] = useState(true);
+
+  // Fetch config data from API
+  useEffect(() => {
+    const fetchConfigData = async () => {
+      try {
+        setIsLoadingConfig(true);
+        const response = await fetch('/api/config');
+        const data = await response.json();
+        
+        if (data.results && data.results.data && Array.isArray(data.results.data) && data.results.data.length > 0) {
+          // Take the first item from the array (index 0)
+          setConfigData(data.results.data[0]);
+        } else {
+          // Fallback config data if API fails
+          setConfigData({
+            id: "1",
+            company_name: "Rusun Pasar Jaya",
+            logo: "/logo-pasar-jaya.png",
+            fav_icon: "/favicon.ico",
+            color_array: [{"hex": "#09893c", "active": true}],
+            footer_array: {
+              email: "info@rusunpasarjaya.com",
+              phone: "+62 21 1234 5678",
+              sosmed: [],
+              address: "Jakarta, Indonesia"
+            }
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching config data:', error);
+        // Fallback config data on error
+        setConfigData({
+          id: "1",
+          company_name: "Rusun Pasar Jaya",
+          logo: "/logo-pasar-jaya.png",
+          fav_icon: "/favicon.ico",
+          color_array: [{"hex": "#09893c", "active": true}],
+          footer_array: {
+            email: "info@rusunpasarjaya.com",
+            phone: "+62 21 1234 5678",
+            sosmed: [],
+            address: "Jakarta, Indonesia"
+          }
+        });
+      } finally {
+        setIsLoadingConfig(false);
+      }
+    };
+
+    fetchConfigData();
+  }, []);
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2 sm:w-[171px]">
-            {/* <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{backgroundColor: '#09893c'}}>
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div> */}
-            <Image src="/logo-pasar-jaya.png" alt="Rusun" width={32} height={32} />
-            <span className="text-xl font-bold text-gray-800">Rusun</span>
+          <div className="flex items-center space-x-2">
+            {configData?.logo ? (
+              <Image 
+                src={configData.logo} 
+                alt={configData.company_name || "Company Logo"} 
+                width={32} 
+                height={32}
+                className="rounded"
+              />
+            ) : (
+              <Image src="/logo-pasar-jaya.png" alt="Rusun" width={32} height={32} />
+            )}
+            <span className="text-md font-bold text-gray-800">
+              {configData?.company_name || "Rusun Pasar Jaya"}
+            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -30,7 +113,7 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:block sm:w-[203px]">
             <Link href="/pengajuan">
               <button 
                 className="text-white px-6 py-2 rounded-full font-semibold transition-all shadow-0 hover:shadow-lg"
