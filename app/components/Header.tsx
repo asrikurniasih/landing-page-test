@@ -86,22 +86,24 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            {configData?.logo ? (
-              <Image 
-                src={configData.logo} 
-                alt={configData.company_name || "Company Logo"} 
-                width={32} 
-                height={32}
-                className="rounded"
-              />
-            ) : (
-              <Image src="/logo-pasar-jaya.png" alt="Rusun" width={32} height={32} />
-            )}
-            <span className="text-md font-bold text-gray-800">
-              {configData?.company_name || "Rusun Pasar Jaya"}
-            </span>
-          </div>
+          <Link href="/">
+            <div className="flex items-center space-x-2">
+              {configData?.logo ? (
+                <Image 
+                  src={configData.logo} 
+                  alt={configData.company_name || "Company Logo"} 
+                  width={32} 
+                  height={32}
+                  className="rounded"
+                />
+              ) : (
+                <Image src="/logo-pasar-jaya.png" alt="Rusun" width={32} height={32} />
+              )}
+              <span className="text-md font-bold text-gray-800">
+                {configData?.company_name || "Rusun Pasar Jaya"}
+              </span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
