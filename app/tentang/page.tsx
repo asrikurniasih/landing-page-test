@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Tentang() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -242,12 +243,17 @@ export default function Tentang() {
             Daftarkan diri Anda sekarang dan dapatkan kesempatan untuk tinggal di Rusun Pasar Jaya
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl" style={{backgroundColor: '#f8971d'}} onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#e8850a'} onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f8971d'}>
-              Lihat Unit
-            </button>
-            <button className="border-2 px-8 py-4 rounded-full font-semibold transition-all hover:shadow-lg text-white border-white hover:bg-white hover:text-green-800">
-              Hubungi Kami
-            </button>
+            <Link href="/unit">
+              <button className="text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl cursor-pointer" style={{backgroundColor: '#f8971d'}} onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#e8850a'} onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f8971d'}>
+                Lihat Unit
+              </button>
+            </Link>
+
+            <Link href="/kontak"> 
+              <button className="border-2 px-8 py-4 rounded-full font-semibold transition-all hover:shadow-lg text-white border-white hover:bg-white hover:text-green-800 cursor-pointer">
+                Hubungi Kami
+              </button>
+            </Link>
           </div>
         </div>
       </section>
